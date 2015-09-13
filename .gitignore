@@ -1,0 +1,12 @@
+.vimrc
+.clang_complete
+
+*.o
+*.out
+*.jpg
+*.png
+nr.exec
+
+cv/*.o
+cv/*.out
+cv/cv.exec

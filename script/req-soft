@@ -1,0 +1,5 @@
+# That's all you neeeeeeeed.
+
+apt-get install -y g++ glibc-doc manpages-posix-dev libopencv-dev python-dev \
+	libprotobuf-dev libboost-all-dev libgflags-dev libgoogle-glog-dev \
+	protobuf-compiler
