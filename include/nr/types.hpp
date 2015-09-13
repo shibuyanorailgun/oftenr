@@ -1,7 +1,7 @@
 #ifndef __OFTENR_NR_TYPES_H
 #define __OFTENR_NR_TYPES_H
 
-#include "linux.hpp"
+#include "nr/linux.hpp"
 
 typedef unsigned char uchar_t;
 

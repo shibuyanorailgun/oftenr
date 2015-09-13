@@ -1,13 +1,17 @@
-#include "cv/rawimg.hpp"
+#include "nr/rawimg.hpp"
+#include "nr/imgmark.hpp"
 
-//using namespace nr;
+using namespace nr;
+using namespace cv;
+using namespace std;
 
 int main(int argc, char *argv[])
 {
-	//uchar_t img[] = { 255, 0, 0, 0, 0, 255, 0, 0, 0, 0, 255, 0, 0, 0, 0, 255 }; 
-	//cv::Mat cvimg = RawImageToCvMat(img, Size(4, 4));
+	Mat cvimg = imread("/home/nr/Pictures/Angel destiny.jpg", CV_LOAD_IMAGE_GRAYSCALE);
 
-	//imwrite("cvimg.jpg", cvimg);
+	spray_img(cvimg, 10, 10, 10);
+	imshow("cvimg", cvimg);
+	waitKey(0);
 	
 	return 0;
 }

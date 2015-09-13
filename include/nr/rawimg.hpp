@@ -2,11 +2,11 @@
  * Copyright (C) Junyu Wu, shibuyanorailgun@foxmail, 2015.
  */
 
-#ifndef __OFTENR_RAWIMG_H
-#define __OFTENR_RAWIMG_H
+#ifndef __OFTENR_NR_RAWIMG_H
+#define __OFTENR_NR_RAWIMG_H
 
-#include "linux.hpp"
-#include "cv.hpp"
+#include "nr/linux.hpp"
+#include "nr/cv.hpp"
 
 namespace nr
 {
@@ -43,4 +43,4 @@ cv::Mat RawImageToCvMat(const std::string raw, const int w, const int h,
 
 }; // end namespace nr
 
-#endif /* end of include guard: __OFTENR_RAWIMG_H */
+#endif /* end of include guard: __OFTENR_NR_RAWIMG_H */

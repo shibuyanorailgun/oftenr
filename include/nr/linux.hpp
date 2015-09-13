@@ -14,6 +14,6 @@
 #include <string>
 #include <vector>
 
-#include "types.hpp"
+#include "nr/types.hpp"
 
 #endif /* end of include guard: __OFTENR_NR_LINUX_H */
