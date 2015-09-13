@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) Junyu Wu, shibuyanorailgun@foxmail, 2015.
+ */
+
+#ifndef __OFTENR_RAWIMG_H
+#define __OFTENR_RAWIMG_H
+
 #include "linux.hpp"
 #include "cv.hpp"
 
@@ -20,21 +27,20 @@ cv::Mat RawImageToCvMat(const Dtype *raw, const cv::Size &sz,
 
 template <typename Dtype>
 cv::Mat RawImageToCvMat(const Dtype *raw, const int w, const int h,
-	const int depth = CV_8U, const int chn = 1)
-{
+	const int depth = CV_8U, const int chn = 1) {
 	return RawImageToCvMat(raw, cv::Size(w, h), depth, chn);
 }
 
 cv::Mat RawImageToCvMat(const std::string raw, const cv::Size &sz,
-	const int depth = CV_8U, const int chn = 1)
-{
+	const int depth = CV_8U, const int chn = 1) {
 	return RawImageToCvMat(raw.c_str(), sz, depth, chn);
 }
 
 cv::Mat RawImageToCvMat(const std::string raw, const int w, const int h,
-	const int depth = CV_8U, const int chn = 1)
-{
+	const int depth = CV_8U, const int chn = 1) {
 	return RawImageToCvMat(raw, cv::Size(w, h), depth, chn);
 }
 
-};
+}; // end namespace nr
+
+#endif /* end of include guard: __OFTENR_RAWIMG_H */

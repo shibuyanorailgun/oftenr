@@ -3,10 +3,11 @@
 
 *.o
 *.out
+*.so
 *.jpg
 *.png
 nr.exec
 
 cv/*.o
 cv/*.out
-cv/cv.exec
+cv/*.so
