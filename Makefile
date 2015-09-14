@@ -1,7 +1,7 @@
 include Makefile.config
 
 TARGET := liboftenr.so
-PROJ := cv
+PROJ := cv cntl
 OBJS := $(addsuffix /obj.o, $(PROJ))
 
 a.out: main.o $(TARGET)
@@ -14,6 +14,9 @@ $(TARGET): $(PROJ)
 	$(CXX) -shared -o $@ $(OBJS) $(LIBS)
 
 cv:
+	make -C $@
+
+cntl:
 	make -C $@
 
 run:
