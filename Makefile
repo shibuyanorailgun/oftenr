@@ -1,25 +1,28 @@
 include Makefile.config
 
+TARGET := liboftenr.so
 PROJ := cv
+OBJS := $(addsuffix /obj.o, $(PROJ))
 
-nr.exec: $(PROJ) main.o
-	$(CXX) -o $@ main.o cv/oftenr.cv.so $(LIBS)
+a.out: main.o $(TARGET)
+	$(CXX) -o $@ $? $(LIBS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $<
 
-oftenr: $(PROJ)
+$(TARGET): $(PROJ)
+	$(CXX) -shared -o $@ $(OBJS) $(LIBS)
 
 cv:
 	make -C $@
 
 run:
-	./nr.exec
+	./a.out
 
 clean:
 	(for i in $(PROJ); do \
 		make -C $$i clean; \
 	done)
-	rm -rf *.o *.out
+	rm -rf *.o *.out *.so
 
-.PHONY: oftenr $(PROJ) clean
+.PHONY: nr.exec $(TARGET) $(PROJ) run clean

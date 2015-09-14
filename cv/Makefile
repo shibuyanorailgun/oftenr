@@ -3,8 +3,8 @@ include ../Makefile.config
 SRC := $(wildcard *.cpp)
 OBJ := $(SRC:.cpp=.o)
 
-oftenr.cv.so: $(OBJ)
-	$(CXX) -shared -o $@ $(OBJ) $(LIBS)
+obj.o: $(OBJ)
+	ld -r -o $@ $(OBJ)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $<
@@ -12,4 +12,4 @@ oftenr.cv.so: $(OBJ)
 -include *.d
 
 clean:
-	rm -rf cv.exec *.o *.d *.out *.so
+	rm -rf *.o *.d *.out *.so
